@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>The Polo Way – The Origins of Cowboy Polo</title>
+    <title>The Polo Way – Western Polo the Movie & Palmetto Polo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="The origins of Cowboy Polo and the Southern Palmetto Polo tradition – a new American pipeline for riders, horses, and patrons."
+      content="Western Polo the Movie and the origins of Cowboy Polo in the Southern Palmetto Polo tradition – a new American pipeline for riders, horses, and patrons."
     />
     <!-- Fonts: Cinzel + EB Garamond + Caveat (handwritten) -->
     <link
@@ -44,7 +44,7 @@
       .page {
         width: 100%;
         max-width: var(--max-width);
-        padding: 56px 18px 64px; /* moved content (including title) further down */
+        padding: 56px 18px 64px;
       }
 
       /* --------------------
@@ -67,7 +67,6 @@
 
       .wordmark-span {
         padding: 6px 14px;
-        /* no top/bottom borders */
         position: relative;
         display: inline-block;
       }
@@ -76,10 +75,8 @@
 
       .wordmark-insert-wrapper {
         position: absolute;
-        /* more left so it's between "THE" and "POLO" */
-        left: 32%;
-        /* lower so it's closer to THE POLO WAY (less gap) */
-        top: -1.7em;
+        left: 32%;          /* more left between THE and POLO */
+        top: -1.7em;        /* closer down toward THE POLO WAY */
         transform: translateX(-50%) rotate(-8deg);
         text-align: center;
         pointer-events: none;
@@ -147,18 +144,24 @@
         margin-bottom: 8px;
       }
 
-      .article-title {
+      /* Feature (movie) block */
+
+      .feature-block {
+        margin-bottom: 26px;
+      }
+
+      .feature-title {
         font-family: "Cinzel", serif;
-        font-size: clamp(2rem, 4vw, 2.6rem);
+        font-size: clamp(2rem, 3.8vw, 2.5rem);
         letter-spacing: 0.06em;
         text-transform: uppercase;
         margin: 0 0 6px;
       }
 
-      .article-subtitle {
-        font-size: 1.05rem;
+      .feature-subtitle {
+        font-size: 1.02rem;
         color: var(--muted);
-        margin: 0 0 18px;
+        margin: 0 0 16px;
       }
 
       .meta {
@@ -166,8 +169,17 @@
         color: var(--muted);
         text-transform: uppercase;
         letter-spacing: 0.16em;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
+
+      /* Divider between movie and Palmetto article */
+
+      .section-divider {
+        margin: 24px 0 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      /* Video */
 
       .hero-video-wrapper {
         margin: 0 0 24px;
@@ -188,6 +200,22 @@
         height: 100%;
         border: none;
         display: block;
+      }
+
+      /* Palmetto article */
+
+      .article-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.9rem, 3.6vw, 2.4rem);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 6px;
+      }
+
+      .article-subtitle {
+        font-size: 1.05rem;
+        color: var(--muted);
+        margin: 0 0 18px;
       }
 
       .article-body h2 {
@@ -273,134 +301,148 @@
       <main>
         <article>
           <div class="article-inner">
-            <div class="kicker">Origins of Cowboy Polo</div>
+            <!-- Feature: Western Polo the Movie -->
+            <section class="feature-block">
+              <div class="kicker">Feature Film</div>
+              <h1 class="feature-title">Western Polo the Movie</h1>
+              <p class="feature-subtitle">
+                A cinematic look at Western-style arena polo in Wyoming — the roots and rhythm of cowboy polo on dirt.
+              </p>
+              <div class="meta">Film • Western Polo • Wyoming</div>
 
-            <h1 class="article-title">
-              Palmetto Polo: The South’s Homegrown Expression of the Game of Kings
-            </h1>
-
-            <p class="article-subtitle">
-              How cowboys and equestrians in the Southeast gave polo a distinctly American, Western twist.
-            </p>
-            <div class="meta">Feature • Cowboy Polo History • South Carolina</div>
-
-            <div class="hero-video-wrapper">
-              <div class="hero-video-inner">
-                <iframe
-                  src="https://www.youtube.com/embed/KKxd_RnlVSU"
-                  title="The Origins of Cowboy Polo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
+              <div class="hero-video-wrapper">
+                <div class="hero-video-inner">
+                  <iframe
+                    src="https://www.youtube.com/embed/KKxd_RnlVSU"
+                    title="Western Polo the Movie"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="article-body">
-              <h2>A Sport for the Lowcountry and the Backcountry</h2>
+            <!-- Divider between movie + Palmetto article -->
+            <div class="section-divider"></div>
 
-              <p>
-                In South Carolina, where horse culture runs deep from Camden to Aiken, polo has long been a part of the
-                landscape. But beyond the stately fields of the English equestrian set, another caliber of rider—cowboys,
-                rodeo competitors, and working horsemen—eager to play more of the sport, began playing a uniquely
-                American expression of the game.
+            <!-- Palmetto Polo Article -->
+            <section>
+              <div class="kicker">Origins of Cowboy Polo</div>
+              <h2 class="article-title">
+                Palmetto Polo: The South’s Homegrown Expression of the Game of Kings
+              </h2>
+              <p class="article-subtitle">
+                How cowboys and equestrians in the Southeast gave polo a distinctly American, Western twist.
               </p>
+              <div class="meta">Feature • Cowboy Polo History • South Carolina</div>
 
-              <p>
-                They didn’t have Argentine thoroughbreds or manicured turf, but they had what was needed: reined cow
-                horses, rodeo arenas, and a taste for high-speed, hard-hitting competition. The result was Palmetto
-                Polo—a distinctly Southern version of polo played in dirt arenas, using western saddles, reined cow
-                horses, and a style that was more cowboy and cattle drive than country club and cocktail hour.
-              </p>
+              <div class="article-body">
+                <h2>A Sport for the Lowcountry and the Backcountry</h2>
 
-              <p>
-                It was a way for Southerners to take the game back from the English and their Northeastern imitators,
-                who had turned polo into yet another imported, exclusive pastime. While they sipped cocktails in their
-                linen whites, down South, real horsemen were breaking colts, reining cow horses, and riding hard—all
-                without needing a valet to hold their mallets.
-              </p>
+                <p>
+                  In South Carolina, where horse culture runs deep from Camden to Aiken, polo has long been a part of the
+                  landscape. But beyond the stately fields of the English equestrian set, another caliber of rider—
+                  cowboys, rodeo competitors, and working horsemen—eager to play more of the sport, began playing a uniquely
+                  American expression of the game.
+                </p>
 
-              <h2>The Birth of a Southern Polo Tradition</h2>
+                <p>
+                  They didn’t have Argentine thoroughbreds or manicured turf, but they had what was needed: reined cow
+                  horses, rodeo arenas, and a taste for high-speed, hard-hitting competition. The result was Palmetto
+                  Polo—a distinctly Southern version of polo played in dirt arenas, using western saddles, reined cow
+                  horses, and a style that was more cowboy and cattle drive than country club and cocktail hour.
+                </p>
 
-              <p>
-                By the mid-20th century, South Carolina had already carved out a reputation as a polo powerhouse,
-                particularly in Aiken, which served as a winter retreat for the Northeastern polo set.
-              </p>
+                <p>
+                  It was a way for Southerners to take the game back from the English and their Northeastern imitators,
+                  who had turned polo into yet another imported, exclusive pastime. While they sipped cocktails in their
+                  linen whites, down South, real horsemen were breaking colts, reining cow horses, and riding hard—all
+                  without needing a valet to hold their mallets.
+                </p>
 
-              <p>
-                Having been exposed to polo, but being primarily a Northeastern sport at that time, Southern horsemen and
-                rodeo riders saw an opportunity to take the game in an entirely organic American direction—one that fit
-                the land, the culture, and the cow horses they already had.
-              </p>
+                <h2>The Birth of a Southern Polo Tradition</h2>
 
-              <p>
-                In many ways, their approach mirrored what Argentina had been perfecting for 50 years. Down there,
-                gauchos weren’t just part of the culture—they built the foundation for Argentina’s polo dominance.
-                Ranchers and working horsemen naturally fed into the sport, ensuring a steady supply of tough, agile
-                ponies and fearless riders who grew up mastering the art of riding before ever picking up a mallet.
-              </p>
+                <p>
+                  By the mid-20th century, South Carolina had already carved out a reputation as a polo powerhouse,
+                  particularly in Aiken, which served as a winter retreat for the Northeastern polo set.
+                </p>
 
-              <p>
-                In the same way, Palmetto Polo emerged as an accessible alternative for American cowboys and Western
-                riders. Instead of importing ponies and players, these riders adapted the game to their own horses, their
-                own arenas, and their own way of riding.
-              </p>
+                <p>
+                  Having been exposed to polo, but being primarily a Northeastern sport at that time, Southern horsemen and
+                  rodeo riders saw an opportunity to take the game in an entirely organic American direction—one that fit
+                  the land, the culture, and the cow horses they already had.
+                </p>
 
-              <ul>
-                <li>
-                  <strong>Western tack and reined cow horses –</strong>
-                  Instead of polo ponies, they used reined cow horses trained for agility, quick stops, and working
-                  cattle.
-                </li>
-                <li>
-                  <strong>Rodeo arenas instead of grass fields –</strong>
-                  Polo was played on dirt and clay, inside fairground arenas, making it more accessible.
-                </li>
-                <li>
-                  <strong>More cowboy –</strong>
-                  The game became a faster, grittier, cowboy-style battle.
-                </li>
-              </ul>
+                <p>
+                  In many ways, their approach mirrored what Argentina had been perfecting for 50 years. Down there,
+                  gauchos weren’t just part of the culture—they built the foundation for Argentina’s polo dominance.
+                  Ranchers and working horsemen naturally fed into the sport, ensuring a steady supply of tough, agile
+                  ponies and fearless riders who grew up mastering the art of riding before ever picking up a mallet.
+                </p>
 
-              <p>
-                By 1959, the sport had evolved, and what was once known as Palmetto Polo was renamed Cowboy Polo,
-                aligning with its growing popularity beyond South Carolina. As the game spread to Florida, Texas, and
-                across the West, the cowboy influence solidified, and the Palmetto Polo name faded into history.
-              </p>
+                <p>
+                  In the same way, Palmetto Polo emerged as an accessible alternative for American cowboys and Western
+                  riders. Instead of importing ponies and players, these riders adapted the game to their own horses, their
+                  own arenas, and their own way of riding.
+                </p>
 
-              <p>
-                Now, over 60 years later, the Cowboy Polo Circuit is here—not just as a revival, but as a movement to
-                reshape the future of American polo. The Cowboy Polo Circuit isn’t about preserving tradition for the
-                elite—it’s about eliminating the gatekeeping that has kept talented riders from reaching the highest
-                levels of the game.
-              </p>
+                <ul>
+                  <li>
+                    <strong>Western tack and reined cow horses –</strong>
+                    Instead of polo ponies, they used reined cow horses trained for agility, quick stops, and working
+                    cattle.
+                  </li>
+                  <li>
+                    <strong>Rodeo arenas instead of grass fields –</strong>
+                    Polo was played on dirt and clay, inside fairground arenas, making it more accessible.
+                  </li>
+                  <li>
+                    <strong>More cowboy –</strong>
+                    The game became a faster, grittier, cowboy-style battle.
+                  </li>
+                </ul>
 
-              <p>
-                For decades, Argentina has produced generations of dominant 10-goal players because they have a system
-                that develops talent from the ground up. The U.S. has never had that—not because the talent isn’t here,
-                but because the opportunities weren’t. Until now.
-              </p>
+                <p>
+                  By 1959, the sport had evolved, and what was once known as Palmetto Polo was renamed Cowboy Polo,
+                  aligning with its growing popularity beyond South Carolina. As the game spread to Florida, Texas, and
+                  across the West, the cowboy influence solidified, and the Palmetto Polo name faded into history.
+                </p>
 
-              <p>
-                The Cowboy Polo Circuit is building a new American pipeline, where cow horse riders, rodeo athletes, and
-                Western competitors can step into the sport and prove themselves based on skill—not access. Polo doesn’t
-                belong to an exclusive few. It belongs to the best riders in the country.
-              </p>
+                <p>
+                  Now, over 60 years later, the Cowboy Polo Circuit is here—not just as a revival, but as a movement to
+                  reshape the future of American polo. The Cowboy Polo Circuit isn’t about preserving tradition for the
+                  elite—it’s about eliminating the gatekeeping that has kept talented riders from reaching the highest
+                  levels of the game.
+                </p>
 
-              <p>
-                This isn’t just a revival—it’s a return to the way American polo was meant to be played: fast, tough, and
-                unmistakably American. And this time, it won’t be reserved for a select few. The next American 10-goal
-                player won’t come from English polo—they’ll be made in the Cowboy Polo Circuit.
-              </p>
+                <p>
+                  For decades, Argentina has produced generations of dominant 10-goal players because they have a system
+                  that develops talent from the ground up. The U.S. has never had that—not because the talent isn’t here,
+                  but because the opportunities weren’t. Until now.
+                </p>
 
-              <div class="coming-soon">
-                <span class="coming-soon-label">Coming Soon</span>
-                <span>
-                  <strong>The Polo Way</strong> — a VR scouting lane where riders can film their Cowboy Polo journey and
-                  patrons can discover the next generation of horses and players.
-                </span>
+                <p>
+                  The Cowboy Polo Circuit is building a new American pipeline, where cow horse riders, rodeo athletes, and
+                  Western competitors can step into the sport and prove themselves based on skill—not access. Polo doesn’t
+                  belong to an exclusive few. It belongs to the best riders in the country.
+                </p>
+
+                <p>
+                  This isn’t just a revival—it’s a return to the way American polo was meant to be played: fast, tough, and
+                  unmistakably American. And this time, it won’t be reserved for a select few. The next American 10-goal
+                  player won’t come from English polo—they’ll be made in the Cowboy Polo Circuit.
+                </p>
+
+                <div class="coming-soon">
+                  <span class="coming-soon-label">Coming Soon</span>
+                  <span>
+                    <strong>The Polo Way</strong> — a VR scouting lane where riders can film their Cowboy Polo journey and
+                    patrons can discover the next generation of horses and players.
+                  </span>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </article>
       </main>
