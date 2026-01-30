@@ -280,20 +280,20 @@
       }
 
       /* Special card treatment for the Palmetto title photo */
-
       .article-photo-palmetto {
         margin: 18px 0 12px;
         padding: 10px 10px 8px;
         background: #f7f7f7;
         border-radius: 16px;
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
+        box-shadow: none;        /* no shadow around the card */
+        border: none;
       }
 
       .article-photo-palmetto img {
         border-radius: 10px;
-        border: 1px solid #dddddd;
-        box-shadow: none;
-        background: #ffffff;
+        border: none;            /* no border / pin line on the photo */
+        box-shadow: none;        /* no shadow on the photo */
+        background: #f7f7f7;
       }
 
       .coming-soon {
@@ -460,10 +460,10 @@
                 Palmetto Polo: The South’s Homegrown Expression of the Game of Kings
               </h2>
 
-              <!-- Palmetto title photo with white card background, no caption -->
+              <!-- Palmetto title photo with white card background, no border/shadow -->
               <figure class="article-photo article-photo-palmetto">
                 <img
-                  src="images/palmetto-polo.png"
+                  src="images/palmetto-polo.jpg"
                   alt="Palmetto Polo arena play in South Carolina"
                 />
               </figure>
