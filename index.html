@@ -8,9 +8,9 @@
       name="description"
       content="Western Polo the Movie and the origins of Cowboy Polo in the Southern Palmetto Polo tradition – a new American pipeline for riders, horses, and patrons."
     />
-    <!-- Fonts: Cinzel + EB Garamond + Rye (branding-iron style) -->
+    <!-- Fonts: Cinzel + EB Garamond + Satisfy (handwritten cursive) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&family=Rye&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&family=Satisfy&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -86,28 +86,28 @@
         opacity: 0.8;
       }
 
-      /* Branding-iron “Cowboy” insert for the wordmark */
+      /* Handwritten “Cowboy” insert for the wordmark */
 
       .wordmark-insert-wrapper {
         position: absolute;
         left: 32%;          /* between THE and POLO */
-        top: -1.7em;        /* closer to THE POLO WAY */
+        top: -1.7em;        /* nearer to THE POLO WAY */
         transform: translateX(-50%) rotate(-8deg);
         text-align: center;
         pointer-events: none;
       }
 
       .wordmark-insert-word {
-        font-family: "Rye", serif; /* Western branding / iron feel */
-        font-size: 1.4rem;
-        text-transform: uppercase;
+        font-family: "Satisfy", cursive; /* classic, legible cursive */
+        font-size: 1.8rem;
+        text-transform: none;
         color: var(--accent);
         white-space: nowrap;
         display: block;
-        letter-spacing: 0.12em;
+        letter-spacing: 0; /* keep strokes connected */
         text-shadow:
-          0 1px 2px rgba(0, 0, 0, 0.85),
-          0 0 1px rgba(0, 0, 0, 0.7);
+          0 1px 2px rgba(0, 0, 0, 0.8),
+          0 0 1px rgba(0, 0, 0, 0.6);
       }
 
       .wordmark-caret {
@@ -158,7 +158,6 @@
 
       .feature-title {
         font-family: "Cinzel", serif;
-        /* ~25% smaller than original big version */
         font-size: clamp(1.2rem, 2.3vw, 1.5rem);
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -215,7 +214,6 @@
 
       .article-title {
         font-family: "Cinzel", serif;
-        /* ~25% smaller than before */
         font-size: clamp(1.05rem, 2vw, 1.45rem);
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -347,7 +345,7 @@
         border: 1px solid rgba(255, 255, 255, 0.7);
         text-decoration: none;
         font-family: "Cinzel", serif;
-        font-size: 0.9rem; /* not tiny */
+        font-size: 0.9rem;
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--fg);
@@ -401,9 +399,9 @@
         <div class="wordmark">
           <span class="wordmark-span">
             THE POLO WAY
-            <!-- Branding-iron style "COWBOY" edit-in insert -->
+            <!-- Handwritten "Cowboy" edit-in insert -->
             <span class="wordmark-insert-wrapper">
-              <span class="wordmark-insert-word">COWBOY</span>
+              <span class="wordmark-insert-word">Cowboy</span>
               <span class="wordmark-caret">^</span>
             </span>
           </span>
