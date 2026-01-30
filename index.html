@@ -61,12 +61,29 @@
         text-transform: uppercase;
         color: var(--fg);
         display: inline-block;
+        position: relative;
       }
 
       .wordmark-span {
         padding: 6px 14px;
         position: relative;
         display: inline-block;
+      }
+
+      /* Fine tapered line under title */
+      .wordmark::after {
+        content: "";
+        display: block;
+        margin: 12px auto 0;
+        width: 260px;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.7),
+          rgba(255, 255, 255, 0)
+        );
+        opacity: 0.8;
       }
 
       /* Editorial “cowboy” insert for the wordmark */
@@ -303,6 +320,10 @@
 
         .wordmark-span {
           white-space: nowrap;    /* prevent wrapping on mobile */
+        }
+
+        .wordmark::after {
+          width: 200px;           /* slightly shorter line on narrow screens */
         }
       }
     </style>
