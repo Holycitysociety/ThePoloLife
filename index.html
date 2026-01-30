@@ -33,7 +33,7 @@
         margin: 0;
         min-height: 100vh;
         font-family: "EB Garamond", serif;
-        background: var(--bg); /* solid black, no gradient */
+        background: var(--bg); /* solid black */
         color: var(--fg);
         display: flex;
         justify-content: center;
@@ -42,7 +42,7 @@
       .page {
         width: 100%;
         max-width: var(--max-width);
-        padding: 56px 18px 64px;
+        padding: 80px 18px 64px; /* moved content further down from top */
       }
 
       /* --------------------
@@ -56,7 +56,7 @@
 
       .wordmark {
         font-family: "Cinzel", serif;
-        font-size: 2.1rem; /* increased page title size */
+        font-size: 2.1rem; /* main site title size */
         letter-spacing: 0.32em;
         text-transform: uppercase;
         color: var(--fg);
@@ -81,8 +81,8 @@
       }
 
       .wordmark-insert-word {
-        font-family: "Yellowtail", cursive; /* western cursive, linked, not too condensed */
-        font-size: 1.5rem; /* a bit larger to match bigger title */
+        font-family: "Yellowtail", cursive; /* western cursive */
+        font-size: 1.5rem;
         text-transform: none;
         color: var(--accent);
         white-space: nowrap;
@@ -101,7 +101,6 @@
          -------------------- */
 
       main {
-        /* remove card styling: just spacing, no background/border/shadow */
         background: transparent;
         border-radius: 0;
         border: none;
@@ -114,8 +113,7 @@
       }
 
       article::before {
-        /* remove the inner frame “card” */
-        content: none;
+        content: none; /* no inner frame */
       }
 
       .article-inner {
@@ -139,7 +137,7 @@
 
       .feature-title {
         font-family: "Cinzel", serif;
-        font-size: clamp(1.6rem, 3vw, 2rem); /* decreased post title size */
+        font-size: clamp(1.6rem, 3vw, 2rem); /* post title smaller than site title */
         letter-spacing: 0.06em;
         text-transform: uppercase;
         margin: 0 0 6px;
@@ -195,7 +193,7 @@
 
       .article-title {
         font-family: "Cinzel", serif;
-        font-size: clamp(1.4rem, 2.6vw, 1.9rem); /* decreased post title size */
+        font-size: clamp(1.4rem, 2.6vw, 1.9rem); /* smaller than main wordmark */
         letter-spacing: 0.06em;
         text-transform: uppercase;
         margin: 0 0 6px;
@@ -209,7 +207,7 @@
 
       .article-body h2 {
         font-family: "Cinzel", serif;
-        font-size: 1.2rem; /* slightly down to match smaller titles */
+        font-size: 1.2rem;
         margin: 26px 0 8px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -291,6 +289,21 @@
         font-size: 0.78rem;
         color: #777;
         text-align: left;
+      }
+
+      /* --------------------
+         Mobile tweaks
+         -------------------- */
+
+      @media (max-width: 480px) {
+        .wordmark {
+          font-size: 1.6rem;      /* smaller so it fits on one line */
+          letter-spacing: 0.24em; /* slightly tighter tracking */
+        }
+
+        .wordmark-span {
+          white-space: nowrap;    /* prevent wrapping on mobile */
+        }
       }
     </style>
   </head>
