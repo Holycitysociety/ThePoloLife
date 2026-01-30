@@ -8,7 +8,7 @@
       name="description"
       content="The origins of Cowboy Polo and the Southern Palmetto Polo tradition – a new American pipeline for riders, horses, and patrons."
     />
-    <!-- Added Caveat for handwritten insert -->
+    <!-- Fonts: Cinzel + EB Garamond + Caveat (handwritten) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&family=Caveat:wght@400;600&display=swap"
       rel="stylesheet"
@@ -47,6 +47,10 @@
         padding: 32px 18px 64px;
       }
 
+      /* --------------------
+         Header / wordmark
+         -------------------- */
+
       header.site-header {
         margin-bottom: 32px;
         text-align: center;
@@ -65,7 +69,40 @@
         padding: 6px 14px;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        display: inline-block;
       }
+
+      /* Editorial “cowboy” insert for the wordmark */
+
+      .wordmark-insert-wrapper {
+        position: absolute;
+        left: 50%;
+        top: -1.9em; /* height above the base line */
+        transform: translateX(-10%) rotate(-6deg);
+        text-align: center;
+        pointer-events: none;
+      }
+
+      .wordmark-insert-word {
+        font-family: "Caveat", cursive;
+        font-size: 1rem;
+        text-transform: none;
+        color: var(--accent);
+        white-space: nowrap;
+        display: block;
+      }
+
+      .wordmark-caret {
+        font-size: 0.7rem;
+        color: var(--accent);
+        display: block;
+        transform: translateY(-0.1em);
+      }
+
+      /* --------------------
+         Main card
+         -------------------- */
 
       main {
         background: radial-gradient(circle at top, #17130b 0, #050507 50%, #020203 100%);
@@ -115,36 +152,6 @@
         letter-spacing: 0.06em;
         text-transform: uppercase;
         margin: 0 0 6px;
-        position: relative;
-      }
-
-      /* Editorial insert styling */
-
-      .title-insert-wrapper {
-        position: relative;
-        display: inline-block;
-        width: 3.1em; /* reserves horizontal space between Palmetto and Polo */
-      }
-
-      .title-insert-caret {
-        position: absolute;
-        left: 50%;
-        bottom: -0.35em;
-        transform: translateX(-50%);
-        font-size: 0.8em;
-        color: var(--accent);
-      }
-
-      .title-insert-word {
-        position: absolute;
-        left: 50%;
-        bottom: 1.15em;
-        transform: translateX(-50%) rotate(-5deg);
-        font-family: "Caveat", cursive;
-        font-size: 0.9em;
-        text-transform: none;
-        color: var(--accent);
-        white-space: nowrap;
       }
 
       .article-subtitle {
@@ -251,7 +258,14 @@
     <div class="page">
       <header class="site-header">
         <div class="wordmark">
-          <span class="wordmark-span">THE POLO WAY</span>
+          <span class="wordmark-span">
+            THE POLO WAY
+            <!-- Handwritten "cowboy" edit-in insert -->
+            <span class="wordmark-insert-wrapper">
+              <span class="wordmark-insert-word">cowboy</span>
+              <span class="wordmark-caret">^</span>
+            </span>
+          </span>
         </div>
       </header>
 
@@ -260,14 +274,8 @@
           <div class="article-inner">
             <div class="kicker">Origins of Cowboy Polo</div>
 
-            <!-- Title with editorial insert: Palmetto ^ cowboy Polo -->
             <h1 class="article-title">
-              Palmetto
-              <span class="title-insert-wrapper">
-                <span class="title-insert-caret">^</span>
-                <span class="title-insert-word">cowboy</span>
-              </span>
-              Polo: The South’s Homegrown Expression of the Game of Kings
+              Palmetto Polo: The South’s Homegrown Expression of the Game of Kings
             </h1>
 
             <p class="article-subtitle">
@@ -277,7 +285,6 @@
 
             <div class="hero-video-wrapper">
               <div class="hero-video-inner">
-                <!-- Embedded YouTube video -->
                 <iframe
                   src="https://www.youtube.com/embed/KKxd_RnlVSU"
                   title="The Origins of Cowboy Polo"
