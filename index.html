@@ -8,9 +8,9 @@
       name="description"
       content="Western Polo the Movie and the origins of Cowboy Polo in the Southern Palmetto Polo tradition – a new American pipeline for riders, horses, and patrons."
     />
-    <!-- Fonts: Cinzel + EB Garamond + Caveat (handwritten) -->
+    <!-- Fonts: Cinzel + EB Garamond + Pacifico (for 'cowboy') -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&family=Caveat:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&family=Pacifico&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -33,18 +33,15 @@
         margin: 0;
         min-height: 100vh;
         font-family: "EB Garamond", serif;
-        background:
-          radial-gradient(circle at top, #17130b 0, #050507 50%, #000000 100%),
-          #000000;
+        background: var(--bg); /* solid black */
         color: var(--fg);
-        display: flex;
-        justify-content: center;
       }
 
       .page {
         width: 100%;
         max-width: var(--max-width);
-        padding: 56px 18px 64px;
+        margin: 0 auto;
+        padding: 40px 18px 64px;
       }
 
       /* --------------------
@@ -52,39 +49,39 @@
          -------------------- */
 
       header.site-header {
-        margin-bottom: 32px;
+        margin-bottom: 36px;
         text-align: center;
       }
 
       .wordmark {
         font-family: "Cinzel", serif;
-        font-size: 1.5rem;
-        letter-spacing: 0.32em;
+        font-size: 2.2rem; /* larger page title */
+        letter-spacing: 0.4em;
         text-transform: uppercase;
         color: var(--fg);
         display: inline-block;
       }
 
       .wordmark-span {
-        padding: 6px 14px;
+        padding: 8px 16px;
         position: relative;
         display: inline-block;
       }
 
-      /* Editorial “cowboy” insert for the wordmark */
+      /* Editorial “cowboy” insert for the wordmark, now using Pacifico */
 
       .wordmark-insert-wrapper {
         position: absolute;
-        left: 32%;          /* between THE and POLO */
-        top: -1.7em;        /* closer to THE POLO WAY */
+        left: 30%;          /* a bit more left between THE and POLO */
+        top: -2.0em;        /* slightly higher above the baseline */
         transform: translateX(-50%) rotate(-8deg);
         text-align: center;
         pointer-events: none;
       }
 
       .wordmark-insert-word {
-        font-family: "Caveat", cursive;
-        font-size: 1.35rem;
+        font-family: "Pacifico", cursive;
+        font-size: 1.7rem;  /* larger cowboy script */
         text-transform: none;
         color: var(--accent);
         white-space: nowrap;
@@ -92,43 +89,28 @@
       }
 
       .wordmark-caret {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: var(--accent);
         display: block;
-        transform: translateY(-0.15em);
+        transform: translateY(-0.2em);
       }
 
       /* --------------------
-         Main card
+         Main layout
          -------------------- */
 
       main {
-        background: radial-gradient(circle at top, #17130b 0, #050507 50%, #020203 100%);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.95);
-        padding: 26px 20px 26px;
-      }
-
-      @media (min-width: 768px) {
-        main {
-          padding: 30px 36px 30px;
-        }
+        /* no card/background: just text on black */
+        padding: 0;
       }
 
       article {
         position: relative;
       }
 
+      /* Kill the old “card frame” entirely */
       article::before {
-        /* faint frame hinting at an arena / VR viewport */
-        content: "";
-        position: absolute;
-        inset: 7% 6%;
-        border-radius: 16px;
-        border: 1px solid rgba(208, 168, 110, 0.18);
-        opacity: 0.35;
-        pointer-events: none;
+        content: none;
       }
 
       .article-inner {
@@ -147,19 +129,19 @@
       /* Feature (movie) block */
 
       .feature-block {
-        margin-bottom: 26px;
+        margin-bottom: 28px;
       }
 
       .feature-title {
         font-family: "Cinzel", serif;
-        font-size: clamp(2rem, 3.8vw, 2.5rem);
-        letter-spacing: 0.06em;
+        font-size: clamp(2.4rem, 4.6vw, 3rem); /* larger feature title */
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin: 0 0 6px;
+        margin: 0 0 8px;
       }
 
       .feature-subtitle {
-        font-size: 1.02rem;
+        font-size: 1.08rem;
         color: var(--muted);
         margin: 0 0 16px;
       }
@@ -175,7 +157,7 @@
       /* Divider between movie and Palmetto article */
 
       .section-divider {
-        margin: 24px 0 22px;
+        margin: 26px 0 24px;
         border-top: 1px solid rgba(255, 255, 255, 0.16);
       }
 
@@ -193,8 +175,8 @@
         border: 1px solid #3a2b16;
         box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85);
         background: #000000;
-        /* make video appear black-and-white */
-        filter: grayscale(.4);
+        /* make video appear partially desaturated */
+        filter: grayscale(0.4);
       }
 
       .hero-video-inner iframe {
@@ -208,29 +190,29 @@
 
       .article-title {
         font-family: "Cinzel", serif;
-        font-size: clamp(1.9rem, 3.6vw, 2.4rem);
-        letter-spacing: 0.06em;
+        font-size: clamp(2.1rem, 4.1vw, 2.8rem); /* larger section title */
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin: 0 0 6px;
+        margin: 0 0 8px;
       }
 
       .article-subtitle {
-        font-size: 1.05rem;
+        font-size: 1.08rem;
         color: var(--muted);
         margin: 0 0 18px;
       }
 
       .article-body h2 {
         font-family: "Cinzel", serif;
-        font-size: 1.3rem;
-        margin: 26px 0 8px;
+        font-size: 1.5rem;  /* bump subheadings too */
+        margin: 28px 0 10px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
       .article-body p {
-        font-size: 1.02rem;
-        line-height: 1.75;
+        font-size: 1.04rem;
+        line-height: 1.8;
         color: var(--fg);
         margin: 0 0 14px;
       }
@@ -241,8 +223,8 @@
       }
 
       .article-body li {
-        font-size: 1.02rem;
-        line-height: 1.7;
+        font-size: 1.04rem;
+        line-height: 1.75;
         color: var(--fg);
         margin-bottom: 4px;
       }
@@ -300,10 +282,12 @@
       }
 
       footer.site-footer {
-        margin-top: 18px;
+        margin-top: 24px;
         font-size: 0.78rem;
         color: #777;
         text-align: left;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
       }
     </style>
   </head>
