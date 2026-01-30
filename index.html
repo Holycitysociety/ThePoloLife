@@ -67,8 +67,7 @@
 
       .wordmark-span {
         padding: 6px 14px;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        /* removed top/bottom borders per your note */
         position: relative;
         display: inline-block;
       }
@@ -77,16 +76,18 @@
 
       .wordmark-insert-wrapper {
         position: absolute;
-        left: 50%;
-        top: -1.9em; /* height above the base line */
-        transform: translateX(-10%) rotate(-6deg);
+        /* move left so it sits between "THE" and "POLO" */
+        left: 40%;
+        /* push it higher to create more gap above THE POLO WAY */
+        top: -2.4em;
+        transform: translateX(-50%) rotate(-8deg);
         text-align: center;
         pointer-events: none;
       }
 
       .wordmark-insert-word {
         font-family: "Caveat", cursive;
-        font-size: 1rem;
+        font-size: 1.35rem; /* bigger cowboy */
         text-transform: none;
         color: var(--accent);
         white-space: nowrap;
@@ -94,10 +95,10 @@
       }
 
       .wordmark-caret {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: var(--accent);
         display: block;
-        transform: translateY(-0.1em);
+        transform: translateY(-0.15em);
       }
 
       /* --------------------
