@@ -181,7 +181,7 @@
       /* Divider between movie and Palmetto article */
 
       .section-divider {
-        margin: 24px 0 22px;
+        margin: 40px 0 36px; /* more space between posts */
         border-top: 1px solid rgba(255, 255, 255, 0.16);
       }
 
@@ -192,6 +192,7 @@
       }
 
       .hero-video-inner {
+        position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
         border-radius: 14px;
@@ -201,6 +202,55 @@
         background: #000000;
         /* slightly washed-out / archival look */
         filter: grayscale(0.4);
+      }
+
+      /* Thumbnail + play button instead of full YouTube chrome */
+
+      .video-thumb {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: block;
+      }
+
+      .video-thumb::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.35)
+        );
+      }
+
+      .video-play-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video-play-icon::before {
+        content: "";
+        border-style: solid;
+        border-width: 10px 0 10px 18px;
+        border-color: transparent transparent transparent #ffffff;
+        margin-left: 3px;
       }
 
       .hero-video-inner iframe {
@@ -279,20 +329,25 @@
         text-align: center;
       }
 
-      /* Special card treatment for the Palmetto title photo */
+      /* Special card treatment for the Palmetto title photo
+         + smaller centered width so it doesn't dominate */
+
       .article-photo-palmetto {
-        margin: 18px 0 12px;
+        margin: 18px auto 12px;
         padding: 10px 10px 8px;
         background: #f7f7f7;
         border-radius: 16px;
-        box-shadow: none;        /* no shadow around the card */
+        box-shadow: none;
         border: none;
+        max-width: 480px;   /* hard cap */
+        width: 80%;         /* about 50–60% of screen on mobile */
       }
 
       .article-photo-palmetto img {
+        width: 100%;
         border-radius: 10px;
-        border: none;            /* no border / pin line on the photo */
-        box-shadow: none;        /* no shadow on the photo */
+        border: none;
+        box-shadow: none;
         background: #f7f7f7;
       }
 
@@ -403,6 +458,11 @@
           width: 200px;           /* slightly shorter line on narrow screens */
         }
 
+        .video-play-icon {
+          width: 52px;
+          height: 52px;
+        }
+
         .footer-link {
           width: 100%;
           max-width: 320px;
@@ -433,19 +493,22 @@
               <div class="kicker">Feature Film</div>
               <h1 class="feature-title">Western Polo the Movie</h1>
               <p class="feature-subtitle">
-              
+                <!-- optional short logline can go here -->
               </p>
               <div class="meta"></div>
 
               <div class="hero-video-wrapper">
                 <div class="hero-video-inner">
-                  <iframe
-                    src="https://www.youtube.com/embed/KKxd_RnlVSU"
-                    title="Western Polo the Movie"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
+                  <!-- Thumbnail + play button; JS swaps in real iframe on click -->
+                  <button
+                    class="video-thumb"
+                    type="button"
+                    data-video-id="KKxd_RnlVSU"
+                    aria-label="Play Western Polo the Movie"
+                    style="background-image: url('https://img.youtube.com/vi/KKxd_RnlVSU/hqdefault.jpg');"
+                  >
+                    <span class="video-play-icon"></span>
+                  </button>
                 </div>
               </div>
             </section>
@@ -469,7 +532,7 @@
               </figure>
 
               <p class="article-subtitle">
-                
+                <!-- optional subtitle line if you want it later -->
               </p>
               <div class="meta">Feature • Cowboy Polo History • South Carolina</div>
 
@@ -644,6 +707,23 @@
       <script>
         // simple year stamp
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        // swap thumbnail for real YouTube iframe on click
+        document.addEventListener("DOMContentLoaded", function () {
+          var thumb = document.querySelector(".video-thumb");
+          if (!thumb) return;
+
+          thumb.addEventListener("click", function () {
+            var parent = thumb.closest(".hero-video-inner");
+            var videoId = thumb.getAttribute("data-video-id");
+            if (!parent || !videoId) return;
+
+            parent.innerHTML =
+              '<iframe src="https://www.youtube.com/embed/' +
+              videoId +
+              '?autoplay=1" title="Western Polo the Movie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+          });
+        });
       </script>
     </div>
   </body>
